@@ -8,9 +8,9 @@
 			{
 				"inputs": [
 					{
-						"internalType": "address",
+						"internalType": "uint256",
 						"name": "",
-						"type": "address"
+						"type": "uint256"
 					},
 					{
 						"internalType": "uint256",
@@ -100,6 +100,11 @@
 						"internalType": "bool",
 						"name": "hideIdentity",
 						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "comNum",
+						"type": "uint256"
 					},
 					{
 						"internalType": "address",
@@ -346,6 +351,236 @@
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "comId",
+						"type": "uint256"
+					}
+				],
+				"name": "getComPost",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "post",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "time",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "hideIdentity",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256",
+								"name": "comNum",
+								"type": "uint256"
+							},
+							{
+								"internalType": "address",
+								"name": "author",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "community",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "fileIpfs",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "fileType",
+										"type": "string"
+									}
+								],
+								"internalType": "struct Kosbis.fileContent",
+								"name": "file",
+								"type": "tuple"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "comments",
+								"type": "uint256[]"
+							}
+						],
+						"internalType": "struct Kosbis.PostContent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "comId",
+						"type": "uint256"
+					}
+				],
+				"name": "getPostComment",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address payable",
+								"name": "author",
+								"type": "address"
+							},
+							{
+								"internalType": "uint256",
+								"name": "comId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "postId",
+								"type": "uint256"
+							},
+							{
+								"internalType": "string",
+								"name": "post",
+								"type": "string"
+							},
+							{
+								"internalType": "uint256",
+								"name": "time",
+								"type": "uint256"
+							},
+							{
+								"components": [
+									{
+										"internalType": "string",
+										"name": "fileIpfs",
+										"type": "string"
+									},
+									{
+										"internalType": "string",
+										"name": "fileType",
+										"type": "string"
+									}
+								],
+								"internalType": "struct Kosbis.fileContent",
+								"name": "file",
+								"type": "tuple"
+							}
+						],
+						"internalType": "struct Kosbis.CommentContent[]",
+						"name": "",
+						"type": "tuple[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					}
+				],
+				"name": "getUserProfile",
+				"outputs": [
+					{
+						"components": [
+							{
+								"internalType": "address payable",
+								"name": "addr",
+								"type": "address"
+							},
+							{
+								"internalType": "string",
+								"name": "name",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "bio",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "img",
+								"type": "string"
+							},
+							{
+								"internalType": "address[]",
+								"name": "followers",
+								"type": "address[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "followersNum",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "balance",
+								"type": "uint256"
+							},
+							{
+								"internalType": "uint256",
+								"name": "postNum",
+								"type": "uint256"
+							},
+							{
+								"internalType": "bool",
+								"name": "verfied",
+								"type": "bool"
+							},
+							{
+								"internalType": "uint256[]",
+								"name": "communities",
+								"type": "uint256[]"
+							},
+							{
+								"internalType": "uint256",
+								"name": "communityNum",
+								"type": "uint256"
+							}
+						],
+						"internalType": "struct Kosbis.Profile",
+						"name": "",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "comId",
+						"type": "uint256"
+					}
+				],
+				"name": "joinCommuinty",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
@@ -377,11 +612,11 @@
 	},
 	"sources": {
 		"contracts/Kobis.sol": {
-			"keccak256": "0x90b0e25e5a6290b2471e2ef913c2da69e46a1eea886d45e14794c323ffb9a562",
+			"keccak256": "0x3096a32b0a0fc7fae406094d2232b428a8fbfa5f098c44abc329679c497ae324",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://ad3bfde88bd0e651a85318aed74ed63ca35f62bdef271e23a9920e4044ca594d",
-				"dweb:/ipfs/QmS6Nmuw397pLLaoH2WCjRiSRx9rhwPY3auQmAqefCVsZ6"
+				"bzz-raw://1b78c7859e19cae605b42f6b6f4b8d0c5c8129b236412673cb19b0b0687d771c",
+				"dweb:/ipfs/QmQHcmJ4eZ5NNu1XFJjChFouK7x112zUCUtzXs5qCaBsJL"
 			]
 		}
 	},

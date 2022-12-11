@@ -47,6 +47,7 @@ contract Kosbis {
         string post;
         uint256 time;
         bool hideIdentity;
+        uint256 comNum;
         address author;
         uint256 community;
         fileContent file;
@@ -78,8 +79,9 @@ contract Kosbis {
     mapping(uint256 => CommunityContent) public communityProfile;
     mapping(address => Profile) public User;
     mapping(uint256 => PostContent []) public Post;
-    mapping(address => CommentContent []) public Comment;
+    mapping(uint256 => CommentContent []) public Comment;
 
+    // this function creates a user
     function createUser(
         string memory name,
         string memory bio,
@@ -94,17 +96,30 @@ contract Kosbis {
 
         for(uint256 i = 0; i < communities.length; i++){
             communityProfile[communities[i]].membersNum++;
+            User[msg.sender].communityNum++;
         }
     }
 
+    // this function helps a user join a community
+    function joinCommuinty(uint256 comId) public {
+        User[msg.sender].communities.push(comId);
+        User[msg.sender].communityNum++;
+
+        communityProfile[comId].membersNum++;
+    }
+
+    // this function create a community
     function createCommunity (
         string memory name       
     ) public {
         communityProfile[communityCounter].name = name;
         communityProfile[communityCounter].uid = communityCounter;
         communityProfile[communityCounter].admin = payable(msg.sender);
+
+        communityCounter++;
     }
 
+    // this creates a post for a community
     function createPost(
         string memory name,
         string memory post,
@@ -134,6 +149,7 @@ contract Kosbis {
         User[msg.sender].postNum++; 
     }
 
+    // this creates a comment for a post but uses the community id as a pointer
     function createComment(
         uint256 comId,
         uint256 postId,
@@ -154,9 +170,23 @@ contract Kosbis {
         newComment.time = block.timestamp;
         newComment.file = newFile;
 
-        Comment[msg.sender].push(newComment);
-
-
+        Post[comId][postId].comNum++;
+        Comment[comId].push(newComment);
     }
+
+    // this get all post in a community
+    function getComPost(uint256 comId) public view returns(PostContent [] memory) {
+        return Post[comId];
+    }
+
+    // this returns all comment in a community and in the frontend should be conditioned to a post
+    function getPostComment(uint256 comId) public view returns(CommentContent [] memory) {
+        return Comment[comId];
+    }
+
+    function getUserProfile(address addr) public view returns(Profile memory){
+        return User[addr];
+    }
+    
 
 }
