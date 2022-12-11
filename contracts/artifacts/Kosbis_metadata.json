@@ -1,0 +1,295 @@
+{
+	"compiler": {
+		"version": "0.8.7+commit.e28d00a7"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "Post",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "post",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "hideIdentity",
+						"type": "bool"
+					},
+					{
+						"internalType": "address",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "community",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "fileIpfs",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fileType",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Kosbis.fileContent",
+						"name": "file",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "User",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "addr",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "img",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "followersNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "balance",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "postNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "bool",
+						"name": "verfied",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "communityNum",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "communityProfile",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "uid",
+						"type": "uint256"
+					},
+					{
+						"internalType": "address payable",
+						"name": "admin",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "membersNum",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "adPrice",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "postNum",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					}
+				],
+				"name": "createCommunity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "post",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "hideIdentity",
+						"type": "bool"
+					},
+					{
+						"internalType": "uint256",
+						"name": "community",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "fileIpfs",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileType",
+						"type": "string"
+					}
+				],
+				"name": "createPost",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "img",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256[]",
+						"name": "communities",
+						"type": "uint256[]"
+					}
+				],
+				"name": "createUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"title": "Kosbis",
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/Kobis.sol": "Kosbis"
+		},
+		"evmVersion": "london",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Kobis.sol": {
+			"keccak256": "0x97d7c682c41d4596b767aa2b15a2b06bc176de39b7a8522de78ffd1bd0ef21a7",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://61a74cd548efb1385845cc6c49b782a5ecd258a72adbcaa82a928b691d5a6628",
+				"dweb:/ipfs/QmP1EKqSoMmcT6QxmbHanoseBsp8cnt6ERMhS4j1XUeNQL"
+			]
+		}
+	},
+	"version": 1
+}
