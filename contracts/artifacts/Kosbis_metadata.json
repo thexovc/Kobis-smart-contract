@@ -18,6 +18,67 @@
 						"type": "uint256"
 					}
 				],
+				"name": "Comment",
+				"outputs": [
+					{
+						"internalType": "address payable",
+						"name": "author",
+						"type": "address"
+					},
+					{
+						"internalType": "uint256",
+						"name": "comId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "postId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "post",
+						"type": "string"
+					},
+					{
+						"internalType": "uint256",
+						"name": "time",
+						"type": "uint256"
+					},
+					{
+						"components": [
+							{
+								"internalType": "string",
+								"name": "fileIpfs",
+								"type": "string"
+							},
+							{
+								"internalType": "string",
+								"name": "fileType",
+								"type": "string"
+							}
+						],
+						"internalType": "struct Kosbis.fileContent",
+						"name": "file",
+						"type": "tuple"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
 				"name": "Post",
 				"outputs": [
 					{
@@ -42,7 +103,7 @@
 					},
 					{
 						"internalType": "address",
-						"name": "addr",
+						"name": "author",
 						"type": "address"
 					},
 					{
@@ -177,6 +238,39 @@
 			{
 				"inputs": [
 					{
+						"internalType": "uint256",
+						"name": "comId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "postId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "string",
+						"name": "text",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileIpfs",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "fileType",
+						"type": "string"
+					}
+				],
+				"name": "createComment",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
 						"internalType": "string",
 						"name": "name",
 						"type": "string"
@@ -283,11 +377,11 @@
 	},
 	"sources": {
 		"contracts/Kobis.sol": {
-			"keccak256": "0x97d7c682c41d4596b767aa2b15a2b06bc176de39b7a8522de78ffd1bd0ef21a7",
+			"keccak256": "0x90b0e25e5a6290b2471e2ef913c2da69e46a1eea886d45e14794c323ffb9a562",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://61a74cd548efb1385845cc6c49b782a5ecd258a72adbcaa82a928b691d5a6628",
-				"dweb:/ipfs/QmP1EKqSoMmcT6QxmbHanoseBsp8cnt6ERMhS4j1XUeNQL"
+				"bzz-raw://ad3bfde88bd0e651a85318aed74ed63ca35f62bdef271e23a9920e4044ca594d",
+				"dweb:/ipfs/QmS6Nmuw397pLLaoH2WCjRiSRx9rhwPY3auQmAqefCVsZ6"
 			]
 		}
 	},
